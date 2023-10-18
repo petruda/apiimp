@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+
+    <title>An anime girl tells you an anime quote</title>
+</head>
+<body>
+    <h1>CLICK THE BUTTON TO GENERATE QUOTE</h1>
+    <form action="/" id="form" class="form" method="POST">
+        <input type="submit" value="Generate">
+    </form>
+    <div id="container" class="anime image">
+        <img src='<%# urlImage %>' alt="" srcset="">
+      </div>
+      <h2>From the anime: <%= anime %></h2> 
+      <h2>Character: <%= character %></h2> 
+      <h4>Says: <%= quote %></h2> 
+
+
+</body>
+</html>
