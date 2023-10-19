@@ -9,17 +9,40 @@
     <title>An anime girl tells you an anime quote</title>
 </head>
 <body>
-    <h1>CLICK THE BUTTON TO GENERATE QUOTE</h1>
-    <form action="/" id="form" class="form" method="POST">
-        <input type="submit" value="Generate">
-    </form>
-    <div id="container" class="anime image">
-        <img src='<% urlImage %>' alt="" srcset="">
-      </div>
-      <h2>From the anime: <%= anime %></h2> 
-      <h2>Character: <%= character %></h2> 
-      <h4>Says: <%= quote %></h2> 
+<div class="main-container">
+   
+        <div class="header">
+            <h1>CLICK THE BUTTON TO GENERATE QUOTE</h1>
+        </div>
 
+        <div class="form">
+            <form action="/" id="form" class="form" method="POST">
+                <input type="submit" id="btns" value="generate">
+            </form>
 
+        </div>
+       
+        <div class="card-container">   
+                 <div class="img-anm"><img src=<%= urlImage %> alt="gif" srcset="" id="animeimg"></div>
+                 <div class="txt-anm">
+                    <h3>From the anime: <%= anime %></h3> 
+                    <h3>Character: <%= character %></h3> 
+                    <h4>Says:</h4> <p> <%= quote %></p>
+                 </div> 
+        </div>
+
+        <div class="bookForm">
+            <div class="isbnbtn"> 
+                <form action="/isbn" id="form" class="form" method="POST">
+                <input type="text" class="text-bar" name="isbnSearch" placeholder="ENTER THE ISBN">
+                <input type="submit" id="btns" value="search">
+                </form>
+            </div> 
+            <div class="bookContainer">
+                    <img class= "book" src=<%= isbnData %> alt="book cover" srcset="">
+            </div>
+        </div>     
+ 
+ </div>
 </body>
 </html>

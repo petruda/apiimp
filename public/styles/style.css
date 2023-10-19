@@ -1,8 +1,65 @@
 body{
     background-color: palevioletred;
 }
-img{
-    height: 12%;
-    width: auto;
-    border-radius: 50%;
+
+.book{
+    height: 100%;
+    border-radius: 0%;
+    border: 3px solid rgb(255, 0, 0);
+    height: 30vh;
+}
+.main-container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    gap: 2vh ;
+    justify-content: start;
+    padding: 5vh;
+}
+.form{
+    height: 10vh;
+    display: flex;
+    justify-content:space-between;
+}
+.card-container{
+    width: 100%;
+    display: flex;
+    border: 3px solid rgb(255, 0, 0);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.anm-img{
+    margin-left: 20px;
+    width:25%;
+}
+.anm-txt{
+    width: 25%;
+}
+.isbnbtn{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+#animeimg{
+    width:15rem
+}
+.text-bar{
+    background-color: transparent;
+    font-weight: 700;
+    color: black;
+    border: solid 3px black;
+   
+} 
+#btns {
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+#btns:hover {
+    background-color: rgb(225, 0, 255);
+    color:#f3ed73; 
+    text-decoration:none; 
+    cursor:pointer;  
 }
