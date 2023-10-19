@@ -30,14 +30,18 @@ app.get("/", (req, res) => {
 app.post("/", async (req, res) => {
   try {
     const result = await axios.get("https://animechan.xyz/api/random");
-    const resultImage = await axios.get("https://nekos.best/api/v2/neko");
+    const resultImage = await axios.get("https://nekos.best/api/v2/hug?amount=1");
+    var resultImgStr = JSON.stringify(resultImage.data.results);
+    
 
     res.render("index.ejs", { 
       anime: result.data.anime,
       character: result.data.character,
       quote: result.data.quote,
+      urlImage : resultImageStr.data.url,
     });
-    console.log(result)
+    console.log(result);
+    console.log(resultImageStr.data.url);
   } catch (error) {
     res.status(404).send(error.message);
   }
