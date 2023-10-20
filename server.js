@@ -11,16 +11,16 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 //what port the server uses
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 //to include static files
-app.use(express.static("public"));
+app.use(express.static(__dirname + "public"));
 //to acces body element
 app.use(bodyParser.urlencoded({ extended: true }));
 //for defining ejs as viewing engine
 app.set("view engine", "ejs");
 
 // to handle te first req to load the main page
-app.get("/", (req, res) => {
+app.get(__dirname + "/", (req, res) => {
     res.render("index.ejs", {    
     
     // left empty or with standard image so they are defined
@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
     });
   });
 //to hande the post request for generating an anime gif + quote
-app.post("/", async (req, res) => {
+app.post(__dirname + "/", async (req, res) => {
   // Using axios to get from one API a quoate and from the other one an gif
   try {
     const result = await axios.get("https://animechan.xyz/api/random");
@@ -56,7 +56,7 @@ app.post("/", async (req, res) => {
   }
 });
 // to handle isbn search req
-app.post("/isbn", async (req, res) => {
+app.post(__dirname + "/isbn", async (req, res) => {
   try {
     //storing the isbn in a var for easier reuse
     var isbn = req.body["isbnSearch"];
