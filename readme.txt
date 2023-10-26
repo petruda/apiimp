@@ -9,7 +9,7 @@ In order to run the site you need to do the following.
 
 3.Open the terminal and Run the following commands: npm i and npm i nodemon.
 
-4.In the terminal write the following command: nodemon index.js.
+4.In the terminal write the following command: nodemon server.js.
 
 5.Open your Browser and enter the following url: http://localhost:3000/
 
